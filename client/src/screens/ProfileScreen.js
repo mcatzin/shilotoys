@@ -50,7 +50,7 @@ const ProfileScreen = {
           </li>
           <li>
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" />
+            <input type="password" name="password" id="password" value="1234" />
           </li>
           <li>
             <button type="submit" class="primary">Update</button>

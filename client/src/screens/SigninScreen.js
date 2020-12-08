@@ -33,11 +33,11 @@ const SigninScreen = {
             </li>
             <li>
               <label for="email">Email</label>
-              <input type="text" id="email" name="email"/>
+              <input type="text" id="email" name="email" value="admin@example.com"/>
             </li>
             <li>
               <label for="password">Password</label>
-              <input type="password" id="password" name="password" />
+              <input type="password" id="password" name="password" value="1234"/>
             </li>
             <li>
               <button type="submit" class="primary">Sign-In</button>
