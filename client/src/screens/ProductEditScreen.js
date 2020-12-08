@@ -2,48 +2,48 @@ import { getProduct, updateProduct, uploadProductImage } from '../api';
 import { hideLoading, parseRequestUrl, showLoading, showMessage } from '../utils';
 
 const ProductEditScreen = {
-    // eslint-disable-next-line prettier/prettier
+  // eslint-disable-next-line prettier/prettier
   after_render: () => { 
-        const request = parseRequestUrl();
-        document.getElementById('edit-product-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            showLoading();
-            const data = await updateProduct({
-                _id: request.id,
-                name: document.getElementById('name').value,
-                price: document.getElementById('price').value,
-                image: document.getElementById('image').value,
-                brand: document.getElementById('brand').value,
-                category: document.getElementById('category').value,
-                countInStock: document.getElementById('countInStock').value,
-                description: document.getElementById('description').value,
-            });
-            hideLoading();
-            if (data.error) {
-                showMessage(data.error);
-            } else {
-                document.location.hash = '/productlist';
-            }
-        });
-        document.getElementById('image-file').addEventListener('change', async (e) => {
-            const file = e.target.files[0];
-            const formData = new FormData();
-            formData.append('image', file);
-            showLoading();
-            const data = await uploadProductImage(formData);
-            hideLoading();
-            if (data.error) {
-                showMessage(data.error);
-            } else {
-                showMessage('Image uploaded successfully');
-                document.getElementById('image').value = data.image;
-            }
-        });
-    },
-    render: async () => {
-        const request = parseRequestUrl();
-        const product = await getProduct(request.id);
-        return `
+    const request = parseRequestUrl();
+    document.getElementById('edit-product-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      showLoading();
+      const data = await updateProduct({
+        _id: request.id,
+        name: document.getElementById('name').value,
+        price: document.getElementById('price').value,
+        image: document.getElementById('image').value,
+        brand: document.getElementById('brand').value,
+        category: document.getElementById('category').value,
+        countInStock: document.getElementById('countInStock').value,
+        description: document.getElementById('description').value,
+      });
+      hideLoading();
+      if (data.error) {
+        showMessage(data.error);
+      } else {
+        document.location.hash = '/productlist';
+      }
+    });
+    document.getElementById('image-file').addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      const formData = new FormData();
+      formData.append('image', file);
+      showLoading();
+      const data = await uploadProductImage(formData);
+      hideLoading();
+      if (data.error) {
+        showMessage(data.error);
+      } else {
+        showMessage('Image uploaded successfully');
+        document.getElementById('image').value = data.image;
+      }
+    });
+  },
+  render: async () => {
+    const request = parseRequestUrl();
+    const product = await getProduct(request.id);
+    return `
       <div class="content">
         <div>
           <a href="/#/productlist">Back to products</a>
@@ -91,6 +91,6 @@ const ProductEditScreen = {
         </div>
       </div>
     `;
-    },
+  },
 };
 export default ProductEditScreen;

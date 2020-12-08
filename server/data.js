@@ -50,7 +50,7 @@ export default {
       category: 'Rubber',
       image: '/images/product-5.jpg',
       price: 19.99,
-      brand: '	Ensky',
+      brand: 'Ensky',
       rating: 3.5,
       numReviews: 89,
       countInStock: 2,
