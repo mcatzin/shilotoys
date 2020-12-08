@@ -1,0 +1,54 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "1. Create Folder Structure    1. Create root folder as Shoppy    2. Add frontend and backend folder    3. Create src folder in frontend    4. Create index.html with heading shoppy in src    5. run npm init in frontend folder    6. npm install live-server    7. add start command as live-server src --verbose    8. run npm start 2. Design website",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "start": "nodemon --watch server --exec babel-node server/server.js",
+    "build": "rm -rf dest && babel server -d dist",
+    "serve": "node dist/server.js",
+    "heroku-prebuild": "cd client && npm install --dev",
+    "heroku-postbuild": "npm run build && cd client && npm install && npm run build"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "formik": "^2.2.5",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.15",
+    "multer": "^1.4.2",
+    "yup": "^0.31.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.7",
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-wesbos": "^1.0.1",
+    "eslint-plugin-html": "^6.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.0"
+  },
+  "engines": {
+    "node": "12.18.3",
+    "npm": "6.14.6"
+  }
+}

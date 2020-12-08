@@ -1,0 +1,36 @@
+// module.exports = {
+//   env: {
+//     browser: true,
+//     node: true,
+//     es2020: true,
+//   },
+//   extends: ['airbnb-base', 'prettier'],
+//   parserOptions: {
+//     sourceType: 'module',
+//     ecmaVersion: 11,
+//   },
+//   plugins: ["prettier"],
+//   rules: {
+//     'no-console': 0,
+//     'no-underscore-dangle': 0,
+//     'no-nested-ternary': 0,
+//     'import/prefer-default-export': 0,
+//   },
+// };
+{
+  "extends": [
+    "wesbos"
+  ],
+  "rules": {
+    "no-console": 2,
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 120,
+        "tabWidth": 2,
+      }
+    ]
+  }
+}
